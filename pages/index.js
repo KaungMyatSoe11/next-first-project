@@ -1,14 +1,20 @@
-import { getFeaturedEvents } from "../dummy-data";
-import EventList from "./components/events/event-list";
+import { getFeaturedEvents } from '../dummy-data';
+import EventList from '../components/events/event-list';
+import Head from 'next/head';
 
-const HomePage = () => {
+function HomePage() {
   const featuredEvents = getFeaturedEvents();
 
   return (
     <div>
-      <EventList events={featuredEvents} />
+      <Head >
+        <title>Meta Tag Example</title>
+        <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
+        <meta name="google" content="notranslate" key="notranslate" />
+      </Head>
+      <EventList items={featuredEvents} />
     </div>
   );
-};
+}
 
 export default HomePage;
